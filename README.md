@@ -1,4 +1,5 @@
-# 🌐 AHMOUD SHARKAWY | Portfolio & Enterprise IT Solutions
+# 🌐 MAHMOUD SHARKAWY
+ | Portfolio & Enterprise IT Solutions
 
 Welcome to my official GitHub repository. This platform hosts my interactive CV, open-source projects, and serves as the hub for my enterprise IT & server brokerage services.
 
