@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamed Saleh Harb | IT Specialist & Tech Founder</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #0f172a;
+            --accent-color: #2563eb;
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        header h2 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info span::after {
+            content: " • ";
+            margin-left: 15px;
+            color: #cbd5e1;
+        }
+
+        .contact-info span:last-child::after {
+            content: "";
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h3.section-title {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .skill-category ul li::before {
+            content: "▪";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .job-card {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .job-title h4 {
+            color: var(--primary-color);
+            font-size: 1.15rem;
+        }
+
+        .job-title span {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+            background: var(--light-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .job-card ul {
+            padding-left: 20px;
+        }
+
+        .job-card ul li {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: #475569;
+        }
+
+        .project-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            .job-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            .contact-info span::after {
+                content: "";
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>MAHMOUD SHARKAWY</h1>
+        <h2>IT Specialist, Web Developer & Tech Founder</h2>
+        <div class="contact-info">
+            <span>📍 [ASWAN, EGYPT]</span>
+            <span>📞 <a href="tel:+20XXXXXXXXXX">+20 XXXXXXXXXX</a></span>
+            <span>✉️ <a href="mailto:Your-Email@email.com">msharkawy005@email.com</a></span>
+            <span>🔗 <a href="[LinkedIn-Link]" target="_blank">LinkedIn</a></span>
+            <span>💼 <a href="[Upwork-Link]" target="_blank">Upwork Profile</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="summary-text">
+            Highly accomplished IT Professional, Software Consultant, and Tech Founder with over 20 years of expertise spanning Web Development, IT Infrastructure, and Business Software Solutions. Founder and Managing Director of "Green Tech Mobile Software," a registered sole proprietorship specializing in enterprise software, databases, and server administration. Proven track record of delivering high-quality front-end and full-stack solutions globally via Upwork. Expert in multi-platform systems (macOS, Windows, Linux) and deeply adept at managing entire project lifecycles for international clients in English.
+        </p>
+    </section>
+
+    <section>
+        <h3 class="section-title">Core Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Enterprise IT & Infra</h4>
+                <ul>
+                    <li>Database Management</li>
+                    <li>Server Administration</li>
+                    <li>System Architecture</li>
+                    <li>Business Software</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Web & Mobile Dev</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>E-Commerce Systems</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Operating Systems</h4>
+                <ul>
+                    <li>macOS & iOS</li>
+                    <li>Windows Server/Desktop</li>
+                    <li>Linux Systems</li>
+                    <li>Android OS</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Business & Languages</h4>
+                <ul>
+                    <li>Arabic (Native)</li>
+                    <li>English (Intermediate)</li>
+                    <li>Project Management</li>
+                    <li>Client Relations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Professional Experience</h3>
+
+        <!-- Job 1 -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Founder & Managing Director</h4>
+                    <span>GreenTech Mobile Software (Sole Proprietorship - Tax ID: 699-224-616)</span>
+                </div>
+                <div class="job-date">07/2022 – Present</div>
+            </div>
+            <ul>
+                <li>Established and manage a legally registered IT enterprise providing comprehensive technical solutions for businesses.</li>
+                <li>Lead the design, development, and deployment of modern websites, e-commerce marketplaces, and web/mobile applications.</li>
+                <li>Oversee server administration, database management, and core IT business software integrations for corporate clients.</li>
+                <li>Consult with business owners to transform legacy workflows into automated, secure, and cloud-ready digital platforms.</li>
+            </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Top-Rated Freelance IT & Web Developer</h4>
+                    <span>Upwork Global Inc. (Remote)</span>
+                </div>
+                <div class="job-date">2014 – Present</div>
+            </div>
+            <ul>
+                <li>Develop and maintain modern, responsive websites for international clients using HTML5, CSS3, and JavaScript.</li>
+                <li>Provide remote technical consultation, network troubleshooting, and multi-platform OS configuration (Windows, macOS).</li>
+                <li>Maintain a pristine reputation and high client satisfaction rate on Upwork through precise, English-based technical communication.</li>
+            </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Smartphones & PC Software Technician</h4>
+                    <span>4g Mobile Academy</span>
+                </div>
+                <div class="job-date">2010 – 2014</div>
+            </div>
+            <ul>
+                <li>Provided advanced desktop/mobile technical support, hardware/software diagnostics, and OS deployment (macOS, Windows, Linux, Android).</li>
+                <li>Resolved complex operating system errors, software deployment conflicts, and data recovery tasks.</li>
+            </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Mobile Software Customer Support Specialist</h4>
+                    <span>GSM TECHNICAL CENTER</span>
+                </div>
+                <div class="job-date">2004 – 2010</div>
+            </div>
+            <ul>
+                <li>Delivered technical support and software solutions for early-generation mobile operating systems (Java, Symbian, BlackBerry, Windows Mobile).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Education</h3>
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Associate Degree in Information Systems Management</h4>
+                    <span>South Valley University</span>
+                </div>
+                <div class="job-date">Graduated: 2004</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Featured Projects</h3>
+        <div class="project-card">
+            <h4>Enterprise E-Marketplace Platform</h4>
+            <p>Designed and managed a full e-commerce ecosystem under Green Tech, incorporating database scalability and secure server deployment.</p>
+        </div>
+        <div class="project-card">
+            <h4>Responsive Frontend Layout</h4>
+            <p>Developed a pixel-perfect, high-performance web interface using HTML5/CSS3/JS for international clients via Upwork.</p>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
