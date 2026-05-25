@@ -1,33 +1,29 @@
-# 🌐 MAHMOUD SHARKAWY
- | Portfolio & Interactive CV
+# 🌐 AHMOUD SHARKAWY | Portfolio & Enterprise IT Solutions
 
-Welcome to my official GitHub repository hosting my professional interactive CV and portfolio. Built with clean, responsive, and semantic HTML5 & CSS3 to showcase my 20+ years of journey in Information Technology, Web Development, and Tech Entrepreneurship.
+Welcome to my official GitHub repository. This platform hosts my interactive CV, open-source projects, and serves as the hub for my enterprise IT & server brokerage services.
 
-👉 **Live Demo:** [https://mahmoudsharkawy.github.io/](https://mahmoudsharkawy.github.io/)
-
----
-
-## 🚀 About Me
-I am a versatile **IT Specialist, Web Developer, and Tech Founder** with a strong technical foundation spanning over two decades. From the early days of mobile software systems to modern web architectures and server management, I have consistently delivered robust digital solutions for global clients and local businesses.
-
-*   **Founder & Managing Director** at *Green Tech Mobile Software* (Tax ID: 699-224-616).
-*   **Top-Rated Freelancer** on *Upwork*, collaborating with international clients in English-speaking environments.
-*   Expert in multi-platform system environments (**macOS, Windows Server, Linux, Android**).
+👉 **Live Site:** [https://mahmoudsharkawy.github.io/](https://mahmoudsharkawy.github.io/)
 
 ---
 
-## 🛠️ Tech Stack & Core Competencies
+## 🚀 What I Do
+I am an **IT Specialist, Web Developer, and Tech Founder** with over 20 years of technical expertise. 
 
-| Domain | Technologies & Skills |
-| :--- | :--- |
-| **Web & Mobile Development** | HTML5, CSS3, JavaScript (ES6+), Responsive Design, E-Commerce |
-| **Enterprise IT & Infrastructure** | Server Administration, Database Management, System Architecture |
-| **Operating Systems** | macOS, Windows Server/Desktop, Linux, Android, iOS |
-| **Business & Management** | Client Relations, Project Scoping, Remote Collaboration, Tech Entrepreneurship |
+*   **⚡ Server Brokerage & Administration:** Specializing in bulk sourcing, deployment, maintenance, and remote management of **Cisco & Lenovo Enterprise Servers**.
+*   **🏢 Enterprise Solutions:** Founder at *Green Tech Mobile Software* (Tax ID: 6162022) delivering custom web applications, e-commerce networks, and database infrastructures.
+*   **🌍 Global Freelancing:** Top-Rated independent contractor on *Upwork*, engineering clean interfaces for international clients.
 
 ---
 
-## 📂 Repository Structure
-```text
-├── index.html        # Main interactive CV structure and responsive styling
-└── README.md         # Documentation and project overview (this file)
+## 📂 Featured Projects & Repositories
+
+### 🔓 Open Source
+*   **Responsive E-Commerce Boilerplate:** Clean layout using HTML5/CSS3/Vanilla JS for ultra-fast performance. [Code Available in Repositories]
+
+### 🔒 Proprietary / Private (Closed Source)
+*   **Green Tech Enterprise ERP:** Internal business automating tool deployed on cloud infrastructure. *Repository is set to Private due to licensing agreements; code architecture demos are available upon request.*
+
+---
+
+## 📥 How to Download my CV (PDF)
+You can download the official print-ready PDF version of my resume directly from the homepage link or find the raw file `my-resume.pdf` uploaded inside this repository.
