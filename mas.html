@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamed Saleh Harb | IT Specialist & Tech Founder</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #0f172a;
+            --accent-color: #2563eb;
+            --server-color: #059669; /* لون مميز لقسم السيرفرات */
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        header h2 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info span::after {
+            content: " • ";
+            margin-left: 15px;
+            color: #cbd5e1;
+        }
+
+        .contact-info span:last-child::after {
+            content: "";
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px rgb(37 99 235 / 0.2);
+        }
+
+        .btn-download:hover {
+            background-color: #1d4ed8;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h3.section-title {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3.server-title {
+            border-left-color: var(--server-color);
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .skill-category ul li::before {
+            content: "▪";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .job-card {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .job-title h4 {
+            color: var(--primary-color);
+            font-size: 1.15rem;
+        }
+
+        .job-title span {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+            background: var(--light-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .job-card ul {
+            padding-left: 20px;
+        }
+
+        .job-card ul li {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: #475569;
+        }
+
+        /* تنسيقات المشروعات والسيرفرات الجديدة */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .project-card.closed {
+            border-top-color: #64748b;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .badge.open-src { background: #dbeafe; color: #1e40af; }
+        .badge.closed-src { background: #e2e8f0; color: #334155; }
+        .badge.server-bdg { background: #d1fae5; color: #065f46; }
+
+        .project-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .server-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .server-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .server-service-item {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
+        }
+
+        .server-service-item h5 {
+            color: var(--server-color);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container { margin: 10px; padding: 20px; }
+            .job-header { flex-direction: column; gap: 5px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; align-items: center; gap: 5px; }
+            .contact-info span::after { content: ""; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>HAMED SALEH HARB</h1>
+        <h2>IT Specialist, Web Developer & Tech Founder</h2>
+        <div class="contact-info">
+            <span>📍 [City, Country]</span>
+            <span>📞 <a href="tel:+20XXXXXXXXXX">+20 XXXXXXXXXX</a></span>
+            <span>✉️ <a href="mailto:Your-Email@email.com">Your-Email@email.com</a></span>
+            <span>🔗 <a href="[LinkedIn-Link]" target="_blank">LinkedIn</a></span>
+            <span>💼 <a href="[Upwork-Link]" target="_blank">Upwork Profile</a></span>
+        </div>
+        <!-- زر تحميل الـ PDF -->
+        <a href="my-resume.pdf" download="Hamed_SaleH_Harb_Resume.pdf" class="btn-download">
+            📥 Download CV (PDF)
+        </a>
+    </header>
+
+    <!-- قسم الخدمات والوساطة للسيرفرات (جديد) -->
+    <section>
+        <h3 class="section-title server-title" style="color: var(--server-color);">Enterprise Server Solutions & Brokerage</h3>
+        <div class="server-box">
+            <p class="summary-text">
+                Leveraging extensive network architecture knowledge, I act as an expert broker providing hardware liquidation, sourcing, and deployment services for **Cisco and Lenovo Enterprise Servers** in bulk. We bridge the gap between data centers and business infrastructure requirements, ensuring maximum uptime and performance.
+            </p>
+            <div class="server-services">
+                <div class="server-service-item">
+                    <h5>🛒 Bulk Sourcing & Brokerage</h5>
+                    <p style="font-size: 0.9rem;">Facilitating overstock and certified bulk hardware acquisition for companies globally.</p>
+                </div>
+                <div class="server-service-item">
+                    <h5>⚙️ Full Deployment & Setup</h5>
+                    <p style="font-size: 0.9rem;">Initial OS flashing, hypervisor deployment, and data architecture provisioning.</p>
+                </div>
+                <div class="server-service-item">
+                    <h5>🛠️ Remote Administration</h5>
+                    <p style="font-size: 0.9rem;">24/7 server infrastructure management, updates, optimization, and proactive troubleshooting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="summary-text">
+            Highly accomplished IT Professional, Software Consultant, and Tech Founder with over 20 years of expertise spanning Web Development, IT Infrastructure, and Business Software Solutions. Founder and Managing Director of "Green Tech Mobile Software," a registered sole proprietorship specializing in enterprise software, databases, and server administration. Proven track record of delivering high-quality front-end and full-stack solutions globally via Upwork. Expert in multi-platform systems (macOS, Windows, Linux) and deeply adept at managing entire project lifecycles for international clients in English.
+        </p>
+    </section>
+
+    <section>
+        <h3 class="section-title">Projects Portfolio</h3>
+        <div class="projects-grid">
+            <!-- مشروع مفتوح المصدر -->
+            <div class="project-card">
+                <span class="badge open-src">Open Source</span>
+                <h4>Responsive E-Commerce Boilerplate</h4>
+                <p>A customizable, semantic, and light-weight e-commerce frontend architecture built with HTML5, vanilla CSS3, and ES6 JavaScript.</p>
+                <a href="https://github.com/hamed-harb" class="project-link" target="_blank">View on GitHub →</a>
+            </div>
+            <!-- مشروع مغلق المصدر -->
+            <div class="project-card closed">
+                <span class="badge closed-src">Proprietary / Closed Source</span>
+                <h4>Green Tech Enterprise ERP Marketplace</h4>
+                <p>A comprehensive business management system featuring complex database relationships and secure cloud server deployment for local businesses.</p>
+                <span style="font-size: 0.85rem; color: #64748b; font-style: italic;">🔒 Private Repository (Available for demo upon request)</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Core Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Enterprise IT & Infra</h4>
+                <ul>
+                    <li>Cisco & Lenovo Brokerage</li>
+                    <li>Server Administration</li>
+                    <li>Database & Cloud Setup</li>
+                    <li>System Architecture</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Web & Mobile Dev</h4>
+                <ul>
+                    <li>HTML5 & CSS3 / JS</li>
+                    <li>E-Commerce Markets</li>
+                    <li>Responsive UI Design</li>
+                    <li>Git & Version Control</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Operating Systems</h4>
+                <ul>
+                    <li>macOS Hardware Support</li>
+                    <li>Windows Server/Desktop</li>
+                    <li>Linux Environments</li>
+                    <li>Android & iOS Software</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Business & Languages</h4>
+                <ul>
+                    <li>Arabic (Native)</li>
+                    <li>English (Fluent)</li>
+                    <li>Project Scoping</li>
+                    <li>Client Consultation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Professional Experience</h3>
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Founder & Managing Director</h4>
+                    <span>Green Tech Mobile Software (Sole Proprietorship - Tax ID: 6162022)</span>
+                </div>
+                <div class="job-date">07/2022 – Present</div>
+            </div>
+            <ul>
+                <li>Established and manage a legally registered IT enterprise providing comprehensive technical solutions for businesses.</li>
+                <li>Lead the design, development, and deployment of modern websites, e-commerce marketplaces, and web/mobile applications.</li>
+                <li>Overseه server administration, database management, and core IT business software integrations for corporate clients.</li>
+                <li>Consult with business owners to transform legacy workflows into automated, secure, and cloud-ready digital platforms.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Top-Rated Freelance IT & Web Developer</h4>
+                    <span>Upwork Global Inc. (Remote)</span>
+                </div>
+                <div class="job-date">2014 – Present</div>
+            </div>
+            <ul>
+                <li>Develop and maintain modern, responsive websites for international clients using HTML5, CSS3, and JavaScript.</li>
+                <li>Provide remote technical consultation, network troubleshooting, and multi-platform OS configuration (Windows, macOS).</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Smartphones & PC Software Technician</h4>
+                    <span>[Shop/Company Name]</span>
+                </div>
+                <div class="job-date">2010 – 2014</div>
+            </div>
+            <ul>
+                <li>Provided advanced desktop/mobile technical support, hardware/software diagnostics, and OS deployment (macOS, Windows, Linux, Android).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Education</h3>
+        <div class="job-card">
+            <div class="job-header">
+                <div class="job-title">
+                    <h4>Associate Degree in Information Systems Management</h4>
+                    <span>[Name of Institute/College]</span>
+                </div>
+                <div class="job-date">Graduated: 2004</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
