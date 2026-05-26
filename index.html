@@ -298,6 +298,23 @@
             margin-bottom: 5px;
         }
 
+        /* حاوية بادج لينكدان المخصص */
+        .linkedin-badge-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px dashed var(--light-bg);
+        }
+
+        /* تنسيق مظهر البادج للتكامل مع التصميم */
+        .LI-profile-badge {
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
         /* تحسينات الشاشات المتوسطة والصغيرة بالكامل */
         @media (max-width: 768px) {
             .container { margin: 20px auto; padding: 20px; }
@@ -320,8 +337,10 @@
             body { background: white; }
             .container { box-shadow: none; padding: 0; margin: 0; }
             ::-webkit-scrollbar { display: none; }
+            .linkedin-badge-container { display: none; } /* إخفاء البادج أثناء الطباعة ليبقى السي في رسمياً ونظيفاً */
         }
     </style>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 <body>
 
@@ -515,6 +534,12 @@
             </div>
         </div>
     </section>
+
+    <div class="linkedin-badge-container">
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="imahmoudsharkawy" data-version="v1">
+            <a class="badge-base__link LI-simple-link" href="https://ae.linkedin.com/in/imahmoudsharkawy?trk=profile-badge">Mahmoud Ahmed</a>
+        </div>
+    </div>
 </div>
 
 </body>
