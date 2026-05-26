@@ -22,7 +22,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* إضافة شريط تمرير رأسي مخصص للموقع بأكمله */
         html {
             overflow-y: scroll;
         }
@@ -34,7 +33,6 @@
             padding: 0 10px;
         }
 
-        /* تنسيق شكل شريط التمرير الرأسي المتصفح */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -252,7 +250,6 @@
 
         .badge.open-src { background: #dbeafe; color: #1e40af; }
         .badge.closed-src { background: #e2e8f0; color: #334155; }
-        .badge.server-bdg { background: #d1fae5; color: #065f46; }
 
         .project-card h4 {
             color: var(--primary-color);
@@ -298,7 +295,6 @@
             margin-bottom: 5px;
         }
 
-        /* تنسيق شبكة عرض قسم اللغات والتعليم */
         .info-split-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -319,7 +315,6 @@
             color: var(--primary-color);
         }
 
-        /* تحسينات الشاشات المتوسطة والصغيرة بالكامل */
         @media (max-width: 768px) {
             .container { margin: 20px auto; padding: 20px; }
             header h1 { font-size: 2rem; }
@@ -335,12 +330,16 @@
             .server-box { padding: 15px; }
         }
 
-        /* ضمان إخفاء شريط التمرير والتنسيق أثناء الطباعة */
         @media print {
             html { overflow: visible; }
             body { background: white; }
             .container { box-shadow: none; padding: 0; margin: 0; }
             ::-webkit-scrollbar { display: none; }
+            .contact-info a::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85rem;
+                color: #64748b;
+            }
         }
     </style>
 </head>
@@ -354,8 +353,8 @@
             <span>📍 [ASWAN, EGYPT]</span>
             <span>📞 <a href="tel:+971521329732">+971 521329732</a></span>
             <span>✉️ <a href="mailto:msharkawy005@gmail.com">msharkawy005@gmail.com</a></span>
-            <span>🔗 <a href="https://www.linkedin.com/in/imahmoudsharkawy/" target="_blank">LinkedIn</a></span>
-            <span>💻 <a href="https://github.com/MahmoudSharkawy" target="_blank">GitHub Profile</a></span>
+            <span>🔗 <a href="https://www.linkedin.com/in/imahmoudsharkawy/" target="_blank">linkedin.com/in/imahmoudsharkawy</a></span>
+            <span>💻 <a href="https://github.com/MahmoudSharkawy" target="_blank">github.com/MahmoudSharkawy</a></span>
         </div>
     </header>
 
@@ -363,7 +362,7 @@
         <h3 class="section-title server-title" style="color: var(--server-color);">Enterprise Server Solutions & Brokerage</h3>
         <div class="server-box">
             <p class="summary-text">
-                Leveraging extensive network architecture knowledge, I act as an expert broker providing hardware liquidation, sourcing, and deployment services for **Cisco and Lenovo Enterprise Servers** in bulk. We bridge the gap between data centers and business infrastructure requirements, ensuring maximum uptime and performance.
+                Leveraging extensive network architecture knowledge, I act as an expert broker providing hardware liquidation, sourcing, and deployment services for Bulk Cisco and Lenovo Enterprise Servers. We bridge the gap between data centers and business infrastructure requirements, ensuring maximum uptime and performance.
             </p>
             <div class="server-services">
                 <div class="server-service-item">
@@ -524,7 +523,6 @@
         </div>
     </section>
 
-    <!-- عرض التعليم واللغات جنباً إلى جنب بشكل متناسق ومتجاوب -->
     <div class="info-split-grid">
         <section>
             <h3 class="section-title">Education</h3>
@@ -542,8 +540,8 @@
         <section>
             <h3 class="section-title">Languages</h3>
             <ul class="lang-list">
-                <li><strong>Arabic:</strong> Native Language </li>
-                <li><strong>English:</strong> Intermediate </li>
+                <li><strong>Arabic:</strong> Native Language</li>
+                <li><strong>English:</strong> Intermediate</li>
             </ul>
         </section>
     </div>
