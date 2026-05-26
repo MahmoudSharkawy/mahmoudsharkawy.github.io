@@ -298,21 +298,25 @@
             margin-bottom: 5px;
         }
 
-        /* حاوية بادج لينكدان المخصص */
-        .linkedin-badge-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 2px dashed var(--light-bg);
+        /* تنسيق شبكة عرض قسم اللغات والتعليم */
+        .info-split-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        /* تنسيق مظهر البادج للتكامل مع التصميم */
-        .LI-profile-badge {
-            box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
-            border-radius: 8px;
-            overflow: hidden;
+        .lang-list {
+            list-style: none;
+        }
+
+        .lang-list li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #475569;
+        }
+
+        .lang-list li strong {
+            color: var(--primary-color);
         }
 
         /* تحسينات الشاشات المتوسطة والصغيرة بالكامل */
@@ -337,10 +341,8 @@
             body { background: white; }
             .container { box-shadow: none; padding: 0; margin: 0; }
             ::-webkit-scrollbar { display: none; }
-            .linkedin-badge-container { display: none; } /* إخفاء البادج أثناء الطباعة ليبقى السي في رسمياً ونظيفاً */
         }
     </style>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </head>
 <body>
 
@@ -522,20 +524,29 @@
         </div>
     </section>
 
-    <section>
-        <h3 class="section-title">Education</h3>
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Associate Degree in Information Systems Management</h4>
-                    <span>South Valley University</span>
+    <!-- عرض التعليم واللغات جنباً إلى جنب بشكل متناسق ومتجاوب -->
+    <div class="info-split-grid">
+        <section>
+            <h3 class="section-title">Education</h3>
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-title">
+                        <h4>Associate Degree in Information Systems Management</h4>
+                        <span>South Valley University</span>
+                    </div>
+                    <div class="job-date">Graduated: 2004</div>
                 </div>
-                <div class="job-date">Graduated: 2004</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    
+        <section>
+            <h3 class="section-title">Languages</h3>
+            <ul class="lang-list">
+                <li><strong>Arabic:</strong> Native Language (اللغة الأم)</li>
+                <li><strong>English:</strong> Intermediate (متوسط)</li>
+            </ul>
+        </section>
+    </div>
 </div>
 
 </body>
