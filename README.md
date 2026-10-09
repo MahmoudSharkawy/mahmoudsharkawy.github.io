@@ -25,6 +25,3 @@ I am an **IT Specialist, Web Developer, and Tech Founder** with over 20 years of
 *   **Green Tech Enterprise ERP:** Internal business automating tool deployed on cloud infrastructure. *Repository is set to Private due to licensing agreements; code architecture demos are available upon request.*
 
 ---
-
-## 📥 How to Download my CV (PDF)
-You can download the official print-ready PDF version of my resume directly from the homepage link or find the raw file `my-resume.pdf` uploaded inside this repository.
