@@ -1,540 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAHMOUD SHARKAWY | Full Stack & Tech Founder</title>
+    <title>Mahmoud Sharkawy | Web Developer & Tech Operations Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1e293b;
-            --secondary-color: #0f172a;
-            --accent-color: #2563eb;
-            --server-color: #059669;
-            --text-color: #334155;
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        html {
-            overflow-y: scroll;
-        }
-
         body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 0 10px;
+            font-family: 'Inter', sans-serif;
         }
-
-        ::-webkit-scrollbar {
-            width: 10px;
+        .code-font {
+            font-family: 'Fira Code', monospace;
         }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--light-bg);
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            width: 100%;
-        }
-
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--light-bg);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
-            word-wrap: break-word;
-        }
-
-        header h2 {
-            color: var(--accent-color);
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info span {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .contact-info a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-color);
-        }
-
-        .contact-info span::after {
-            content: " • ";
-            margin-left: 15px;
-            color: #cbd5e1;
-        }
-
-        .contact-info span:last-child::after {
-            content: "";
-        }
-
-        section {
-            margin-bottom: 35px;
-        }
-
-        h3.section-title {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 12px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        h3.server-title {
-            border-left-color: var(--server-color);
-        }
-
-        .summary-text {
-            font-size: 1.05rem;
-            color: #475569;
-            text-align: justify;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: var(--light-bg);
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category ul li {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 12px;
-        }
-
-        .skill-category ul li::before {
-            content: "▪";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-        }
-
-        .job-card {
-            margin-bottom: 25px;
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-            gap: 15px;
-        }
-
-        .job-title h4 {
-            color: var(--primary-color);
-            font-size: 1.15rem;
-        }
-
-        .job-title span {
-            color: var(--accent-color);
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: block;
-            margin-top: 2px;
-        }
-
-        .job-date {
-            font-size: 0.9rem;
-            color: #64748b;
-            font-weight: 500;
-            background: var(--light-bg);
-            padding: 2px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-
-        .job-card ul {
-            padding-left: 20px;
-        }
-
-        .job-card ul li {
-            font-size: 0.95rem;
-            margin-bottom: 6px;
-            color: #475569;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: var(--light-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border-top: 3px solid var(--accent-color);
-        }
-
-        .project-card.closed {
-            border-top-color: #64748b;
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .badge.open-src { background: #dbeafe; color: #1e40af; }
-        .badge.closed-src { background: #e2e8f0; color: #334155; }
-
-        .project-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .project-card p {
-            font-size: 0.95rem;
-            color: #475569;
-            margin-bottom: 10px;
-        }
-
-        .project-link {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .server-box {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .server-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .server-service-item {
-            background: var(--white);
-            padding: 15px;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
-        }
-
-        .server-service-item h5 {
-            color: var(--server-color);
-            margin-bottom: 5px;
-        }
-
-        .info-split-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .lang-list {
-            list-style: none;
-        }
-
-        .lang-list li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-            color: #475569;
-        }
-
-        .lang-list li strong {
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 768px) {
-            .container { margin: 20px auto; padding: 20px; }
-            header h1 { font-size: 2rem; }
-            .job-header { flex-direction: column; gap: 8px; }
-            .job-date { align-self: flex-start; }
-            .contact-info { flex-direction: column; align-items: center; gap: 8px; }
-            .contact-info span::after { content: ""; }
-        }
-
-        @media (max-width: 480px) {
-            header h1 { font-size: 1.75rem; }
-            .container { padding: 15px; }
-            .server-box { padding: 15px; }
-        }
-
-        
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 transition-colors duration-300 min-h-screen">
 
-<div class="container">
-    <header>
-        <h1>MAHMOUD SHARKAWY</h1>
-        <h2>Full Stack Developer & Tech Founder</h2>
-        <div class="contact-info">
-            <span>✉️ <a href="mailto:msharkawy005@gmail.com">msharkawy005@gmail.com</a></span>
-            <span>🔗 <a href="https://www.linkedin.com/in/imahmoudsharkawy/" target="_blank">linkedin.com/in/imahmoudsharkawy</a></span>
-            <span>💻 <a href="https://github.com/MahmoudSharkawy" target="_blank">github.com/MahmoudSharkawy</a></span>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="code-font text-brand-500 font-bold text-lg flex items-center gap-2">
+                <span class="text-slate-400">&lt;</span>Mahmoud.Sharkawy<span class="text-slate-400">/&gt;</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-brand-500 transition">About</a>
+                <a href="#experience" class="hover:text-brand-500 transition">Experience</a>
+                <a href="#skills" class="hover:text-brand-500 transition">Skills</a>
+                <a href="#languages" class="hover:text-brand-500 transition">Languages</a>
+                <a href="#contact" class="hover:text-brand-500 transition">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-brand-500 transition">
+                    <i id="theme-icon" class="fa-solid fa-sun"></i>
+                </button>
+                <a href="mailto:msharkawy005@gmail.com" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-lg shadow-brand-600/20">
+                    <i class="fa-solid fa-paper-plane"></i> Hire Me
+                </a>
+            </div>
         </div>
     </header>
 
-    <section>
-        <h3 class="section-title server-title" style="color: var(--server-color);">Enterprise Server Solutions & Brokerage</h3>
-        <div class="server-box">
-            <p class="summary-text">
-                Leveraging extensive network architecture knowledge, I act as an expert broker providing hardware liquidation, sourcing, and deployment services for Bulk Cisco and Lenovo Enterprise Servers. We bridge the gap between data centers and business infrastructure requirements, ensuring maximum uptime and performance.
-            </p>
-            <div class="server-services">
-                <div class="server-service-item">
-                    <h5>🛒 Bulk Sourcing & Brokerage</h5>
-                    <p style="font-size: 0.9rem;">Facilitating overstock and certified bulk hardware acquisition for companies globally.</p>
-                </div>
-                <div class="server-service-item">
-                    <h5>⚙️ Full Deployment & Setup</h5>
-                    <p style="font-size: 0.9rem;">Initial OS flashing, hypervisor deployment, and data architecture provisioning.</p>
-                </div>
-                <div class="server-service-item">
-                    <h5>🛠️ Remote Administration</h5>
-                    <p style="font-size: 0.9rem;">24/7 server infrastructure management, updates, optimization, and proactive troubleshooting.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h3 class="section-title">Professional Summary</h3>
-        <p class="summary-text">
-            Highly accomplished IT Professional, Software Consultant, and Tech Founder with over 20 years of expertise spanning Web Development, IT Infrastructure, and Business Software Solutions. Co-Founder of "Mahmoud Afandi Technology" in Dubai Silicon Oasis and Managing Director of "GreenTech Mobile Software." Proven expert in managing multi-platform hardware systems, building cross-border e-commerce systems, handling tech supply-chain logistics, and deployment pipelines.
-        </p>
-    </section>
-
-    <section>
-        <h3 class="section-title">Projects Portfolio</h3>
-        <div class="projects-grid">
-            <div class="project-card">
-                <span class="badge open-src">Open Source</span>
-                <h4>Responsive E-Commerce Boilerplate</h4>
-                <p>A customizable, semantic, and light-weight e-commerce frontend architecture built with HTML5, vanilla CSS3, and ES6 JavaScript.</p>
-                <a href="https://github.com/MahmoudSharkawy/Boilerplate" class="project-link" target="_blank">View on GitHub →</a>
-            </div>
-            <div class="project-card closed">
-                <span class="badge closed-src">Proprietary / Closed Source</span>
-                <h4>Green Tech Enterprise ERP Marketplace</h4>
-                <p>A comprehensive business management system featuring complex database relationships and secure cloud server deployment for local businesses.</p>
-                <span style="font-size: 0.85rem; color: #64748b; font-style: italic;">🔒 Private Repository (Available for demo upon request)</span>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h3 class="section-title">Core Skills</h3>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Enterprise IT & Infra</h4>
-                <ul>
-                    <li>Cisco & Lenovo Brokerage</li>
-                    <li>Server Administration</li>
-                    <li>Database & Cloud Setup</li>
-                    <li>System Architecture</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4>Web & Mobile Dev</h4>
-                <ul>
-                    <li>HTML5, CSS3, & ES6 JS</li>
-                    <li>Full Stack Architecture</li>
-                    <li>E-Waste Tools & ERPs</li>
-                    <li>Git & Deployment</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4>Operating Systems</h4>
-                <ul>
-                    <li>macOS Hardware Support</li>
-                    <li>Windows Server/Desktop</li>
-                    <li>Linux Environments</li>
-                    <li>Mobile Firmware & GSM</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h4>Business & Logistics</h4>
-                <ul>
-                    <li>International Trade / DSO</li>
-                    <li>Cross-Border Operations</li>
-                    <li>Tech Supply Chain & Wholesale</li>
-                    <li>E-Waste Lifecycle Mgmt</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h3 class="section-title">Professional Experience</h3>
-        
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Co-Founder</h4>
-                    <span>Mahmoud Afandi Technology - FZCO (Dubai Silicon Oasis, UAE)</span>
-                </div>
-                <div class="job-date">05/2025 – Present</div>
-            </div>
-            <ul>
-                <li>Direct wholesale trading pipelines and international shipping logistics for high-volume consumer electronics.</li>
-                <li>Orchestrate e-waste collection, recovery, and certified electronic recycling processes within regional regulatory standards.</li>
-                <li>Oversee global business operations, strategic cross-border partnerships, and bulk technology equipment resale.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Founder & Full Stack Developer</h4>
-                    <span>GreenTech Mobile Software (Al Jizah, Egypt)</span>
-                </div>
-                <div class="job-date">07/2022 – Present</div>
-            </div>
-            <ul>
-                <li>Architect and scale comprehensive web systems, custom retail/wholesale databases, and secure backend solutions.</li>
-                <li>Consult with enterprise clients to implement digital transformation blueprints, automated workflows, and cloud network nodes.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Back End Developer</h4>
-                    <span>iFixCare EGYPT (Egypt)</span>
-                </div>
-                <div class="job-date">07/2020 – 12/2022</div>
-            </div>
-            <ul>
-                <li>Engineered scalable database logic, service booking workflows, and internal application endpoints for retail tech repairs.</li>
-                <li>Optimized platform APIs to decrease page response latency and secure transactional database processing.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Frontend Developer</h4>
-                    <span>4G Academy (Nasr City, Cairo, Egypt)</span>
-                </div>
-                <div class="job-date">01/2014 – 01/2019</div>
-            </div>
-            <ul>
-                <li>Built intuitive web layouts, content interfaces, and optimized educational resources for students and engineers.</li>
-                <li>Ensured total cross-browser structural parity and fast loading frameworks over mobile network environments.</li>
-            </ul>
-        </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <div class="job-title">
-                    <h4>Mobile Software Specialist</h4>
-                    <span>GSM4G Technology & Training (Cairo, Egypt)</span>
-                </div>
-                <div class="job-date">06/2006 – 01/2014</div>
-            </div>
-            <ul>
-                <li>Managed low-level system diagnostic processes, custom operating system flashing, and firmware kernel recoveries.</li>
-                <li>Provided high-level hardware-software troubleshooting frameworks and diagnostics for mobile and computational devices.</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="info-split-grid">
-        <section>
-            <h3 class="section-title">Education</h3>
-            <div class="job-card">
-                <div class="job-header">
-                    <div class="job-title">
-                        <h4>Associate Degree in Information Systems Management</h4>
-                        <span>South Valley University</span>
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/20 via-slate-950 to-slate-950 -z-10"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span> Available for Opportunities
                     </div>
-                    <div class="job-date">Graduated: 2004</div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+                        Hi, I'm <span class="text-brand-500">Mahmoud Sharkawy</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+                        Versatile <span class="text-brand-400 font-semibold">Web Developer</span> & <span class="text-brand-400 font-semibold">Tech Operations Specialist</span> bridging the gap between robust backend/frontend architecture and resilient system operations.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#experience" class="bg-brand-600 hover:bg-brand-500 text-white font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-brand-600/30 flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase"></i> View Experience
+                        </a>
+                        <a href="https://www.linkedin.com/in/imahmoudsharkawy/" target="_blank" class="glass-card hover:bg-slate-800 text-slate-200 font-medium px-6 py-3 rounded-xl transition flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin text-brand-500"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-4">
+                    <div class="glass-card p-6 rounded-2xl relative shadow-2xl border border-slate-800">
+                        <div class="absolute -top-3 -right-3 bg-brand-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                            Profile Info
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-location-dot text-brand-500 w-5"></i>
+                                <span>Aswan, Egypt (Home)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-envelope text-brand-500 w-5"></i>
+                                <span class="truncate">msharkawy005@gmail.com</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-brand-500 w-5"></i>
+                                <span>(+20) 1004644396</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-passport text-brand-500 w-5"></i>
+                                <span>Work Permit: Egyptian</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h3 class="section-title">Languages</h3>
-            <ul class="lang-list">
-                <li><strong>Arabic:</strong> Native Language</li>
-                <li><strong>English:</strong> Intermediate</li>
-            </ul>
-        </section>
-    </div>
-</div>
+    <!-- About & Education Section -->
+    <section id="about" class="py-16 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Background & Education</h2>
+                <p class="text-slate-400 mt-2">Foundational training and professional background history.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 bg-brand-500/10 text-brand-500 rounded-xl text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Diploma in Information Technology</h3>
+                            <p class="text-xs text-brand-400">Technical Institute of Commerce (2004 - 2006)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Comprehensive foundational training covering core information technology principles, system architectures, and technical problem-solving.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 bg-brand-500/10 text-brand-500 rounded-xl text-lg">
+                            <i class="fa-solid fa-code-merge"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-white">Core Expertise Integration</h3>
+                            <p class="text-xs text-brand-400">Development + Operations</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Combining modern web development stack (React, JavaScript, Node.js) with extensive sysadmin and hardware/software troubleshooting background across Linux, macOS, and Windows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Work Experience</h2>
+                <p class="text-slate-400 mt-2">A timeline of professional impact across software development and IT infrastructure.</p>
+            </div>
+
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-slate-800">
+                
+                <!-- Job 1 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-500 border-4 border-slate-950 z-10"></div>
+                    <div class="md:w-5/12 pl-10 md:pl-0 md:pr-12 md:text-right">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">2022 - 2026</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Web Developer</h3>
+                        <p class="text-brand-500 font-medium">Greentech Software • Giza, Egypt</p>
+                    </div>
+                    <div class="md:w-5/12 pl-10 md:pl-12 mt-4 md:mt-0">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Designed, built, and deployed scalable web applications from scratch, translating business requirements into seamless, responsive user interfaces and robust back-end logic using JavaScript, React, HTML5, CSS3, and GitHub.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-500 border-4 border-slate-950 z-10"></div>
+                    <div class="md:w-5/12 pl-10 md:pl-0 md:pr-12 md:text-right md:order-1">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">2020 - 2022</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Tech Operations Specialist</h3>
+                        <p class="text-brand-500 font-medium">iFixcare • Cairo, Egypt</p>
+                    </div>
+                    <div class="md:w-5/12 pl-10 md:pl-12 mt-4 md:mt-0 md:order-2">
+                        <div class="glass-card p-6 rounded-2xl space-y-3 text-sm text-slate-300">
+                            <p>• Installed, configured, and managed hardware/software across multi-platform environments (Linux, macOS, Windows) ensuring minimal downtime.</p>
+                            <p>• Conducted regular performance evaluations of IT systems, proactively scaling resources to match organizational demand.</p>
+                            <p>• Assisted with core network administration, supporting connectivity, troubleshooting routing issues, and maintaining optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-500 border-4 border-slate-950 z-10"></div>
+                    <div class="md:w-5/12 pl-10 md:pl-0 md:pr-12 md:text-right">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">2008 - 2014</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Tech Operations Specialist</h3>
+                        <p class="text-brand-500 font-medium">GSM4G • Cairo, Egypt</p>
+                    </div>
+                    <div class="md:w-5/12 pl-10 md:pl-12 mt-4 md:mt-0">
+                        <div class="glass-card p-6 rounded-2xl space-y-3 text-sm text-slate-300">
+                            <p>• Advanced troubleshooting, installation, and configuration across Windows (10/11), macOS, and Linux environments.</p>
+                            <p>• TCP/IP, LAN/WAN setup, Wi-Fi configuration, router/switch management, and network troubleshooting.</p>
+                            <p>• Remote support, user account management, software diagnostics, and technical documentation.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-slate-900/50 border-y border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Technical Skills & Expertise</h2>
+                <p class="text-slate-400 mt-2">Tools, technologies, and platforms mastered over professional practice.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-html5 text-orange-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">HTML5</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-css3-alt text-blue-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">CSS3</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-js text-yellow-400 text-2xl"></i>
+                    <span class="font-medium text-slate-200">JavaScript</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-react text-cyan-400 text-2xl"></i>
+                    <span class="font-medium text-slate-200">React</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-node text-green-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Node.JS</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-git-alt text-red-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Git & GitHub</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-linux text-yellow-200 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Linux Administration</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-solid fa-database text-blue-400 text-2xl"></i>
+                    <span class="font-medium text-slate-200">MySQL & JSON</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-bootstrap text-purple-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Bootstrap</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-brands fa-apple text-slate-200 text-2xl"></i>
+                    <span class="font-medium text-slate-200">macOS & Windows</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-solid fa-globe text-brand-500 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Web Development</span>
+                </div>
+                <div class="glass-card p-5 rounded-xl flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code text-indigo-400 text-2xl"></i>
+                    <span class="font-medium text-slate-200">Computer Expert</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Skills Section -->
+    <section id="languages" class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Language Proficiency</h2>
+                <p class="text-slate-400 mt-2">Communication skills and linguistic capabilities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Arabic</h3>
+                        <p class="text-xs text-slate-400 mt-1">Mother Tongue</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-bold uppercase">C2 Proficient</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">English</h3>
+                        <p class="text-xs text-slate-400 mt-1">Listening B1 | Reading B1 | Speaking B1 | Writing B1</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold uppercase">B1 Independent</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <a href="#hero" class="code-font text-brand-500 font-bold text-lg">
+                    <span class="text-slate-400">&lt;</span>Mahmoud.Sharkawy<span class="text-slate-400">/&gt;</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-1">© 2026 Mahmoud Sharkawy. All rights reserved.</p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:msharkawy005@gmail.com" class="text-slate-400 hover:text-brand-500 transition text-lg"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/imahmoudsharkawy/" target="_blank" class="text-slate-400 hover:text-brand-500 transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://twitter.com/iMahmoudShark" target="_blank" class="text-slate-400 hover:text-brand-500 transition text-lg"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://wa.me/+201004644396" target="_blank" class="text-slate-400 hover:text-brand-500 transition text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('light');
+            if (htmlElement.classList.contains('light')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                document.body.classList.remove('bg-slate-950', 'text-slate-100');
+                document.body.classList.add('bg-slate-50', 'text-slate-900');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                document.body.classList.remove('bg-slate-50', 'text-slate-900');
+                document.body.classList.add('bg-slate-950', 'text-slate-100');
+            }
+        });
+    </script>
 </body>
 </html>
